@@ -49,6 +49,7 @@ http.createServer((request, response) => {
      * @param {string} statusMessage  
      * @param {Object} headers 
      */
+
     response.writeHead(200, 'ok===', {
         'Content-Type': 'text/plain'
     })
@@ -119,11 +120,16 @@ app.listen(3000, () => {
 
 ```
 
-至此我们的 koa-demo 已经有模有样了，但是官方 use 方法传参是`(ctx,next)`, ctx 代表包含了 req/res 的上下文对象，通过这个对象，我们可以获取很多有用的信息，例如设置 ctx.body 作为响应体，
+至此我们的 koa-demo 已经有模有样了，但是官方 use 方法传参是`(ctx,next)`, ctx(context) 代表包含了 req/res 的上下文对象，通过这个对象，我们可以获取很多有用的信息，例如通过 ctx.url 获取 request 路径，通过 ctx.body 设置响应体，
 
-接下来我们就继续完善它。
+接下来我们就继续完善它。要创建 context ,首先需要构建 request 以及 response 
 
+多发点1[^footnote]
+[^footnote]:testdfja
+
+```
 对象访问器属性 setter 和 getter 详见《javascript 高级程序设计》P 141
+```
 
 ```js
 
@@ -157,7 +163,7 @@ module.exports = {
 // lib/response.js
 
 module.exports = {
-    
+
     /**
      * Get response body
      * 
