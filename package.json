@@ -1,0 +1,23 @@
+{
+  "name": "simple-koa",
+  "version": "1.0.0",
+  "description": "基于源码尝试自己实现 koa ",
+  "main": "lib/application.js",
+  "keywords": [
+    "web",
+    "app",
+    "http",
+    "application",
+    "framework",
+    "middleware",
+    "rack"
+  ],
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stanny2017",
+  "license": "MIT"
+}
